@@ -1,5 +1,6 @@
 import Header from './Header';
 import Sidebar from './Sidebar';
+import 'src/components/Layout/DefaultLayout/Page.scss';
 function DefaultLayout({ children }) {
     return (
         <div>
