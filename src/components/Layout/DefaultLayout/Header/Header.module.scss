@@ -4,13 +4,135 @@
 }
 .inner {
     width: 1150px;
-    background-color: aliceblue;
+
     height: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
     .logo {
-        margin-top: 10px;
         margin-left: 28px;
+        width: 118px;
+        height: 42px;
+    }
+}
+.inputsearch {
+    width: 361px;
+    height: 46px;
+    background-color: rgba(22, 24, 35, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 92px;
+    border: solid 2px transparent;
+    input {
+        width: 292px;
+        height: 42px;
+        margin-left: 16px;
+        padding: 10px 0;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        background-color: transparent;
+    }
+    input:not(:placeholder-shown) ~ .search {
+        color: rgba(22, 24, 35, 0.75);
+    }
+    &:focus-within {
+        border: solid 1.5px rgb(215, 214, 214);
+    }
+    button {
+        border: none;
+        color: rgb(165, 165, 165);
+        zoom: 110%;
+    }
+    .search {
+        padding: 0 16px;
+        font-size: 18px;
+        position: relative;
+        height: 100%;
+        background-color: transparent;
+        border-top-right-radius: 92px;
+        border-bottom-right-radius: 92px;
+
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+    .search::before {
+        content: '';
+        position: absolute;
+        height: 26px;
+        width: 1px;
+        background-color: rgb(215, 215, 215);
+        left: 0px;
+        top: 6px;
+    }
+    .load {
+        position: absolute;
+        right: 56px;
+        background-color: transparent;
+        padding: 3px;
+    }
+    .close {
+        position: absolute;
+        right: 56px;
+        background-color: transparent;
+        padding: 3px;
+        opacity: 0.7;
+    }
+}
+.box-searchResult {
+    width: 361px;
+    .account {
+        height: 30px;
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: rgba(22, 24, 35, 0.5);
+    }
+}
+.login {
+    width: 272px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    .upload {
+        width: 112px;
+        height: 34px;
+        padding: 0 16px;
+        font-size: 16px;
+        border: solid 1px rgb(211, 211, 211);
+        font-weight: 600;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+    .loginn {
+        width: 100px;
+        height: 36px;
+        font-weight: 800;
+        font-size: 14px;
+        background-color: var(--prrimary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+        }
+    }
+    .option {
+        font-size: 20px;
+        padding: 0 12px;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
     }
 }

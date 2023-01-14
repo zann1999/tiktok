@@ -1,0 +1,44 @@
+.wrapper {
+    padding: 9px 16px;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+    }
+
+    .user {
+        position: relative;
+        .username {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .name {
+            font-size: 14px;
+            line-height: 20px;
+            color: rgba(22, 24, 35, 0.5);
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .checked {
+            color: rgb(51, 220, 243);
+            position: absolute;
+            top: -4px;
+            right: -24px;
+        }
+    }
+}
