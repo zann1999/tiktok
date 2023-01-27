@@ -136,3 +136,20 @@
         border: none;
     }
 }
+.box-option {
+    width: 223px;
+    position: absolute;
+    right: -26px;
+}
+.wrapoption {
+    padding: 8px 0;
+}
+.opptionn {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 550;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}

@@ -3,17 +3,23 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import images from '~/asset/image';
 import Tippy from '@tippyjs/react/headless';
+import 'tippy.js/animations/scale.css';
 import Popper from '../../components/popper';
 import SearchResultAccount from '../../components/searchResultAccount';
 import {
     faCircle,
+    faCircleQuestion,
     faCircleXmark,
     faClose,
+    faEarthAsia,
     faEllipsisVertical,
+    faKeyboard,
     faMagnifyingGlass,
+    faMoon,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import Options from '../../components/opptions';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -61,9 +67,38 @@ function Header() {
                 <div className={cx('login')}>
                     <button className={cx('upload')}>+ Tai len</button>
                     <button className={cx('loginn')}>Dang nhap</button>
-                    <button className={cx('option')}>
-                        <FontAwesomeIcon icon={faEllipsisVertical} />
-                    </button>
+                    <Tippy
+                        interactive={true}
+                        delay={[100, 500]}
+                        render={(attrs) => (
+                            <div className={cx('box-option')} tabIndex="-1" {...attrs}>
+                                <Popper>
+                                    <div className={cx('wrapoption')}>
+                                        <Options className={cx('opptionn')}>
+                                            <FontAwesomeIcon icon={faEarthAsia} />
+                                            <> </>Tiếng Việt
+                                        </Options>
+                                        <Options className={cx('opptionn')}>
+                                            <FontAwesomeIcon icon={faCircleQuestion} />
+                                            <> </>Phản hồi và trợ giúp
+                                        </Options>
+                                        <Options className={cx('opptionn')}>
+                                            <FontAwesomeIcon icon={faKeyboard} />
+                                            <> </>Phím tắt trên bàn phím
+                                        </Options>
+                                        <Options className={cx('opptionn')}>
+                                            <FontAwesomeIcon icon={faMoon} />
+                                            <> </> Chế độ tối
+                                        </Options>
+                                    </div>
+                                </Popper>
+                            </div>
+                        )}
+                    >
+                        <button className={cx('option')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Tippy>
                 </div>
             </div>
         </header>
