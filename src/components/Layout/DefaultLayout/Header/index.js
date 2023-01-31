@@ -7,6 +7,8 @@ import 'tippy.js/animations/scale.css';
 import Popper from '../../components/popper';
 import SearchResultAccount from '../../components/searchResultAccount';
 import {
+    faAngleLeft,
+    faBackspace,
     faCircle,
     faCircleQuestion,
     faCircleXmark,
@@ -20,8 +22,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import Options from '../../components/opptions';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
+
 function Header() {
     const [searchResult, setsearchResult] = useState([]);
     useEffect(() => {
@@ -29,6 +33,57 @@ function Header() {
             setsearchResult([1, 2]);
         }, 2000);
     }, []);
+    const datamenu = [
+        {
+            className: 'opptionn',
+            title: ' Tiếng Việt',
+            icon: <FontAwesomeIcon icon={faEarthAsia} />,
+            onclick: true,
+        },
+        {
+            className: 'opptionn',
+
+            title: ' Phản hồi và trợ giúp',
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            href: '/feedback',
+        },
+        {
+            className: 'opptionn',
+
+            title: '  Phím tắt trên bàn phím',
+            icon: <FontAwesomeIcon icon={faKeyboard} />,
+        },
+        {
+            className: 'opptionn',
+
+            title: '  Chế độ tối',
+            icon: <FontAwesomeIcon icon={faMoon} />,
+        },
+    ];
+    const datamenu2 = [
+        {
+            classNameicon: 'iconbackmenu',
+            className: 'opptionn',
+            icon: <FontAwesomeIcon icon={faAngleLeft} />,
+
+            title: 'Language',
+            onclick: true,
+        },
+        {
+            className: 'opptionn',
+
+            title: 'English',
+            code: 'en',
+        },
+        {
+            className: 'opptionn',
+
+            title: 'Tiếng Việt',
+            code: 'vi',
+        },
+    ];
+    const [menu, setmenu] = useState(datamenu);
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -69,16 +124,22 @@ function Header() {
                     <button className={cx('loginn')}>Dang nhap</button>
                     <Tippy
                         interactive={true}
-                        delay={[100, 500]}
+                        delay={[100, 500000]}
                         render={(attrs) => (
                             <div className={cx('box-option')} tabIndex="-1" {...attrs}>
                                 <Popper>
                                     <div className={cx('wrapoption')}>
-                                        <Options className={cx('opptionn')}>
-                                            <FontAwesomeIcon icon={faEarthAsia} />
-                                            <> </>Tiếng Việt
-                                        </Options>
-                                        <Options className={cx('opptionn')}>
+                                        <Options
+                                            datas={menu}
+                                            onClick={() => {
+                                                if (menu.length === datamenu.length) {
+                                                    setmenu(() => datamenu2);
+                                                } else {
+                                                    setmenu(() => datamenu);
+                                                }
+                                            }}
+                                        ></Options>
+                                        {/* <Options className={cx('opptionn')} href={'/feedback'}>
                                             <FontAwesomeIcon icon={faCircleQuestion} />
                                             <> </>Phản hồi và trợ giúp
                                         </Options>
@@ -89,7 +150,7 @@ function Header() {
                                         <Options className={cx('opptionn')}>
                                             <FontAwesomeIcon icon={faMoon} />
                                             <> </> Chế độ tối
-                                        </Options>
+                                        </Options> */}
                                     </div>
                                 </Popper>
                             </div>
