@@ -141,6 +141,82 @@
     position: absolute;
     right: -26px;
 }
+.box-option::before {
+    top: -18.2px;
+    right: 15px;
+    position: absolute;
+    content: '';
+    border: solid 10px;
+    border-color: transparent transparent rgb(216, 215, 215) transparent;
+}
 .wrapoption {
     padding: 8px 0;
+}
+.OnUser {
+    display: flex;
+
+    .upload {
+        width: 112px;
+        height: 34px;
+        padding: 0 16px;
+        font-size: 16px;
+        border: solid 1px rgb(211, 211, 211);
+        font-weight: 600;
+        margin-right: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+    .messageuser {
+        margin-right: 24px;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .mailuser {
+        margin-right: 28px;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .profileUser {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+.box-messageuser {
+    color: white;
+    background-color: rgb(85, 85, 85);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.box-messageuser::before {
+    top: -18.2px;
+    right: 28px;
+    position: absolute;
+    content: '';
+    border: solid 10px #fe2c55;
+    border-color: transparent transparent rgb(85, 85, 85) transparent;
+}
+.box-mailuser {
+    color: white;
+    background-color: rgb(85, 85, 85);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.box-mailuser::before {
+    top: -18.2px;
+    right: 28px;
+    position: absolute;
+    content: '';
+    border: solid 10px #fe2c55;
+    border-color: transparent transparent rgb(85, 85, 85) transparent;
 }
